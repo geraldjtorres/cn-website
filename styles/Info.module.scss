@@ -1,0 +1,56 @@
+.container {
+  // min-height: calc(100vh - 77px);
+  min-height: 100vh;
+  .content {
+    padding: 20px;
+    // border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    // max-width: 1440px;
+    margin: 0 auto;
+    h1 {
+      font-size: 220px;
+      color: #313715;
+      letter-spacing: -1px;
+      line-height: 190px;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+    p {
+      margin-bottom: 16px;
+    }
+    .picture {
+      width: 450px;
+      height: 630px;
+      background: url('../public/images/craig-about.jpg') no-repeat center
+        center/cover;
+      position: absolute;
+      top: 87px;
+      left: 161px;
+      max-width: 40%;
+    }
+    .picture:hover {
+      background: url('../public/images/hundred.jpg') no-repeat center
+        center/cover;
+    }
+
+    .info {
+      width: 450px;
+      max-width: 35%;
+      min-width: 34%;
+      span {
+        text-decoration: underline;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      .builtBy {
+        margin-top: 40px;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
