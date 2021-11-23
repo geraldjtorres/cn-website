@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Franklin Gothic FS Book';
+  src: url('/fonts/FranklinGothicFS-Book.woff2') format('woff2'),
+    url('/fonts/FranklinGothicFS-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Franklin Gothic FS Book', BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Swiper styles
+
+.swiper {
+  width: 100%;
+  height: 60vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide span img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

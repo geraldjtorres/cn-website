@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid red;
+
+  .textContainer {
+    display: flex;
+    padding: 12px;
+
+    p:first-of-type {
+      margin-right: 40px;
+    }
+  }
+
+  .link {
+    text-transform: capitalize;
+  }
+}

@@ -1,0 +1,27 @@
+.container {
+  min-height: calc(100vh - 77px);
+  .header {
+    padding: 20px;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      font-size: 220px;
+      color: #313715;
+      letter-spacing: -1px;
+      line-height: 190px;
+      margin: 0;
+    }
+
+    .info {
+      width: 450px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
