@@ -23,7 +23,7 @@ const slides = [
   { name: 'slide5', size: '480x300' }
 ]
 
-export default function Carousel() {
+export default function Carousel({ projects }) {
   return (
     <>
       <Swiper
@@ -47,13 +47,13 @@ export default function Carousel() {
         pagination={false}
         className='mySwiper'
       >
-        {slides.map(i => (
-          <SwiperSlide className='box' key={i.name}>
+        {projects.map(project => (
+          <SwiperSlide className='box' key={project.id}>
             <Image
-              src={`https://via.placeholder.com/${i.size}.png?text=${i.name}`}
+              src={project.image.url}
               layout='fill'
               objectFit='contain'
-              alt=''
+              alt={project.image_description}
             />
           </SwiperSlide>
         ))}
