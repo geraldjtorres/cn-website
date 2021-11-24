@@ -1,28 +1,25 @@
 .container {
-  // min-height: calc(100vh - 77px);
-  min-height: 100vh;
-  .header {
+  height: 100vh;
+  overflow: scroll;
+  .content {
     padding: 20px;
     border: 1px solid blue;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
+
     h1 {
       font-size: 220px;
       color: #313715;
       letter-spacing: -1px;
       line-height: 190px;
       margin: 0;
+      position: fixed;
+      left: 20px;
     }
 
     .info {
       width: 450px;
+      min-width: 32%;
     }
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
   }
 }

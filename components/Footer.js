@@ -7,7 +7,7 @@ export default function Footer({ footerLink }) {
       <div className={styles.textContainer}>
         <p>Play</p>
         <p className={styles.link}>
-          <Link href={`/${footerLink}`}>{footerLink}</Link>
+          <Link href={footerLink==="work"? "/" :`/${footerLink}`}>{footerLink}</Link>
         </p>
       </div>
     </footer>
