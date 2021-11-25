@@ -9,25 +9,22 @@ import 'swiper/css/free-mode'
 import 'swiper/css/pagination'
 
 // import Swiper core and required modules
-import SwiperCore, { FreeMode, Pagination, Autoplay } from 'swiper'
+import SwiperCore, { FreeMode, Pagination, Autoplay, Breakpoints } from 'swiper'
 
 // install Swiper modules
-SwiperCore.use([FreeMode, Pagination, Autoplay])
-
-// const slides = ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'slide6']
-const slides = [
-  { name: 'slide1', size: '480x300' },
-  { name: 'slide2', size: '374x374' },
-  { name: 'slide3', size: '251x377' },
-  { name: 'slide4', size: '480x300' },
-  { name: 'slide5', size: '480x300' }
-]
+SwiperCore.use([FreeMode, Pagination, Autoplay, Breakpoints])
 
 export default function Carousel({ projects }) {
   return (
     <>
       <Swiper
-        slidesPerView={4}
+        breakpoints={{
+          768: {
+            // width: 768,
+            slidesPerView: 5
+          }
+        }}
+        slidesPerView={2}
         freeMode={{
           enabled: true,
           // minimumVelocity: 0.5
@@ -43,7 +40,7 @@ export default function Carousel({ projects }) {
           reverseDirection: false,
           pauseOnMouseEnter: true
         }}
-        speed={11000}
+        speed={10000}
         pagination={false}
         className='mySwiper'
       >

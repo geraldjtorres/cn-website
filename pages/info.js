@@ -1,43 +1,77 @@
 import styles from '../styles/Info.module.scss'
 import Layout from '@/components/Layout'
-import {FiCornerDownRight} from "react-icons/fi"
+import { FiCornerDownRight } from 'react-icons/fi'
 import Link from 'next/link'
+import { API_URL } from '@/config/index'
+import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
+import { useState } from 'react'
 
+export default function InfoPage({ infopage }) {
+  // console.log('infopage', infopage)
+  const [heroImage, setHeroImage] = useState({
+    backgroundImage: `url(${infopage.profile_picture.formats.large.url})`
+  })
 
-export default function InfoPage() {
   return (
     <Layout footerLink='work'>
       <div className={styles.container}>
         <div className={styles.content}>
           <h1>CN</h1>
-          <div className={styles.picture}></div>
+          <div
+            className={styles.picture}
+            style={heroImage}
+            onMouseEnter={() => {
+              setHeroImage({
+                backgroundImage: `url(
+                  ${infopage.studio_picture.formats.large.url}
+                )`
+              })
+            }}
+            onMouseLeave={() => {
+              setHeroImage({
+                backgroundImage: `url(
+                  ${infopage.profile_picture.formats.large.url}
+                )`
+              })
+            }}
+          />
           <div className={styles.info}>
-          <p>
-                I’ve delivered projects in Dubai, London, New York, Dublin and Belfast. 
-              </p>
-              <p>
-                In 2020, I launched <Link href="https://www.hundredstudio.co.uk/" target="_blank">Hundred Studio</Link> with Gregg after many discussions about how to do something creative outside of our day job.
-              </p>
-              <p>
-                Changing that day job turned out to be the answer.
-              </p>
-              <p>
-                I’m in the business of finding solutions. I ask questions, and then I ask some more questions. Helping businesses head in the right direction. I’ve worked with Bvlgari, Ulster University, HSBC, Danske Bank, First Abu Dhabi Bank.
-              </p>
-              <ul>
-                <li>Email me</li>
-                <li>Follow me on Instagram</li>
-                <li>Connect on LinkedIn</li>
-              </ul>
-              <ul className={styles.builtBy}>
-                <li><FiCornerDownRight/> Built by <Link href="https://www.linkedin.com/in/gerald-jeff-torres-92a24a94/" target="_blank">Jeff Torres</Link></li>
-                <li><FiCornerDownRight/> Portrait by <Link href="https://www.linkedin.com/in/kalie-reid-bb127715b/" target="_blank">Kalie Reid</Link></li>
-                <li><FiCornerDownRight/> Typeset in Franklin Gothic Regular</li>
-              </ul>
-              <p>© 2021 <Link href="/terms">Terms</Link></p>
+            <ReactMarkdown linkTarget='_blank'>
+              {infopage.description}
+            </ReactMarkdown>
+
+            <ul>
+              {infopage.links.map(link => (
+                <li key={link.id}>
+                  <Link href={link.href}>
+                    <a target='_blank'>
+                      <FiCornerDownRight /> {link.label}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className={styles.builtBy}>
+              <ReactMarkdown linkTarget='_blank'>
+                {infopage.website_details}
+              </ReactMarkdown>
+            </div>
+            <p>
+              © 2021 <Link href='/terms'>Terms</Link>
+            </p>
           </div>
-        </div>      
+        </div>
       </div>
-  </Layout>
+    </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const infopageRes = await fetch(`${API_URL}/infopage`)
+  const infopage = await infopageRes.json()
+
+  return {
+    props: { infopage } // will be passed to the page component as props
+  }
 }

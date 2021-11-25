@@ -9,17 +9,22 @@
 
     h1 {
       font-size: 220px;
-      color: #313715;
+
       letter-spacing: -1px;
       line-height: 190px;
       margin: 0;
       position: fixed;
       left: 20px;
+      font-weight: 400;
     }
 
     .info {
       width: 450px;
       min-width: 32%;
+
+      p {
+        margin-bottom: 16px;
+      }
     }
   }
 }

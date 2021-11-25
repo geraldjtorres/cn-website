@@ -10,7 +10,7 @@ export default function Layout({
   footerLink
 }) {
   return (
-    <div style={{ backgroundColor: '#E9E7E2' }}>
+    <div style={{ backgroundColor: '#E9E7E2', color: 'red' }}>
       <Head>
         <title>{title}</title>
         <meta name='description' content={description} />

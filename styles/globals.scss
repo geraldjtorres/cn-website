@@ -24,11 +24,25 @@ a {
   margin: 0;
 }
 
+p {
+  font-size: 20px;
+  letter-spacing: 0.14px;
+  line-height: 24px;
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 18px;
+    letter-spacing: 0.14px;
+    line-height: 22px;
+  }
+}
+
 // Swiper styles
 
 .swiper {
   width: 100%;
-  height: 60vh;
+  height: 100%;
 }
 
 .swiper-slide {
