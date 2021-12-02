@@ -1,19 +1,21 @@
 .container {
   height: 100vh;
-  overflow: scroll;
+
+  max-width: 1440px;
+  margin: 0 auto;
   .content {
-    padding: 20px;
-    border: 1px solid blue;
+    padding: 32px;
+    // border: 1px solid blue;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+    margin: 0 auto;
 
     h1 {
       font-size: 220px;
-
       letter-spacing: -1px;
       line-height: 190px;
       margin: 0;
-      position: fixed;
+      // position: fixed;
       left: 20px;
       font-weight: 400;
     }
@@ -21,9 +23,33 @@
     .info {
       width: 450px;
       min-width: 32%;
+      overflow: scroll;
+      height: 100vh;
 
       p {
         margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    .content {
+      flex-direction: column;
+      h1 {
+        font-size: 140px;
+        letter-spacing: -0.5px;
+        line-height: 118px;
+        position: static;
+      }
+
+      .info {
+        max-width: 100%;
+        margin: 0 auto;
+        width: 90%;
+        margin-top: 48px;
+        margin-bottom: 26px;
       }
     }
   }

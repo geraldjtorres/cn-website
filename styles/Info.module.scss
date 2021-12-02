@@ -4,22 +4,21 @@
   max-width: 1440px;
   margin: 0 auto;
   .content {
-    padding: 20px;
+    padding: 32px;
     // border: 1px solid blue;
     display: flex;
     justify-content: space-between;
     position: relative;
-
     margin: 0 auto;
     h1 {
       font-size: 220px;
-
       letter-spacing: -1px;
       line-height: 190px;
       margin: 0;
       position: relative;
       z-index: 2;
       font-weight: 400;
+      height: 100%;
     }
     p {
       margin-bottom: 16px;
@@ -37,11 +36,18 @@
       left: 161px;
       max-width: 40%;
       transition: background-image 0.2s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .picture:hover {
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      a {
+        opacity: 1;
+      }
     }
 
     .info {

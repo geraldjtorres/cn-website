@@ -26,11 +26,11 @@ export default function Carousel({ projects }) {
         }}
         slidesPerView={2}
         freeMode={{
-          enabled: true,
-          // minimumVelocity: 0.5
+          enabled: true
+          // minimumVelocity: 0.5,
           // momentumBounceRatio: 5,
-          momentumVelocityRatio: 0.5,
-          momentumRatio: 0.5
+          // momentumVelocityRatio: 0.5,
+          // momentumRatio: 0.5
         }}
         spaceBetween={20}
         loop={true}
@@ -40,7 +40,7 @@ export default function Carousel({ projects }) {
           reverseDirection: false,
           pauseOnMouseEnter: true
         }}
-        speed={10000}
+        speed={20000}
         pagination={false}
         className='mySwiper'
       >

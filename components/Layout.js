@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '@/styles/Layout.module.scss'
 import Footer from '@/components/Footer'
 
 export default function Layout({
@@ -7,10 +6,14 @@ export default function Layout({
   keywords,
   description,
   children,
-  footerLink
+  footerLink,
+  currentTheme,
+  colorScheme
 }) {
+  // console.log('props', props)
+
   return (
-    <div style={{ backgroundColor: '#E9E7E2', color: 'red' }}>
+    <div>
       <Head>
         <title>{title}</title>
         <meta name='description' content={description} />

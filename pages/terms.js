@@ -2,18 +2,30 @@ import styles from '../styles/Terms.module.scss'
 import Layout from '@/components/Layout'
 import { API_URL } from '@/config/index'
 import ReactMarkdown from 'react-markdown'
+import Link from 'next/link'
+import { slideUp } from '../animations'
+import { motion } from 'framer-motion'
 
 export default function Terms({ termspage }) {
-  console.log('terms', termspage)
   return (
     <Layout footerLink='info'>
       <div className={styles.container}>
         <div className={styles.content}>
-          <h1>CN</h1>
-          <div className={styles.info}>
+          <Link href='/'>
+            <h1 className='cn-logo'>CN</h1>
+          </Link>
+          <motion.div
+            className={styles.info}
+            initial={slideUp.initial}
+            transition={{
+              ease: 'easeInOut',
+              duration: '0.5'
+            }}
+            exit={slideUp.exit}
+            animate={slideUp.animate}
+          >
             <ReactMarkdown linkTarget='_blank'>{termspage.terms}</ReactMarkdown>
-            {/* <div className={styles.transparent}></div> */}
-          </div>
+          </motion.div>
         </div>
       </div>
     </Layout>
@@ -25,6 +37,7 @@ export async function getStaticProps() {
   const termspage = await termspageRes.json()
 
   return {
-    props: { termspage } // will be passed to the page component as props
+    props: { termspage }, // will be passed to the page component as props
+    revalidate: 1
   }
 }
