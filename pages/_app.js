@@ -44,18 +44,9 @@ function MyApp({
       theme.background_color
     };color: ${theme.text_color};}[data-theme="theme${
       index + 1
-    }"] footer {background: ${
-      theme.background_color
-    }; background: -webkit-linear-gradient(0deg, ${
-      theme.background_color
-    } 65%, rgba(255,255,255,0) 100%);
-      background: linear-gradient(0deg, ${
-        theme.background_color
-      } 65%, rgba(255,255,255,0) 100%);}[data-theme="theme${
-      index + 1
-    }"] .more-link {background-color: ${theme.text_color}; color: ${
-      theme.background_color
-    }}`
+    }"] [data-theme="theme${index + 1}"] .more-link {background-color: ${
+      theme.text_color
+    }; color: ${theme.background_color}}`
   })
 
   // Your themeing variables
@@ -65,9 +56,7 @@ function MyApp({
     randomTheme.text_color
   };}
   
-  :root footer {background: linear-gradient(180deg, rgba(233, 231, 226, 0) 0%, ${
-    randomTheme.background_color
-  } 40%);}
+
   
   :root .more-link {background-color: ${randomTheme.background_color}}
     ${cssStyles.join('')}
