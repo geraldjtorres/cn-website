@@ -44,13 +44,14 @@ function MyApp({
       theme.background_color
     };color: ${theme.text_color};}[data-theme="theme${
       index + 1
-    }"] footer {background: ${
+    }"] footer {background: ${theme.background_color};
+      background: linear-gradient(0deg, ${
+        theme.background_color
+      } 65%, rgba(255,255,255,0) 100%);}[data-theme="theme${
+      index + 1
+    }"] .more-link {background-color: ${theme.text_color}; color: ${
       theme.background_color
-    }; background: linear-gradient(to bottom, rgba(233, 231, 226, 0) 0%, ${
-      theme.background_color
-    } 100%);}[data-theme="theme${index + 1}"] .more-link {background-color: ${
-      theme.text_color
-    }; color: ${theme.background_color}}`
+    }}`
   })
 
   // Your themeing variables
