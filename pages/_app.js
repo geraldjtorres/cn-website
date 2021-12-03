@@ -48,7 +48,7 @@ function MyApp({
       theme.background_color
     }; background: linear-gradient(to bottom, rgba(233, 231, 226, 0) 0%, ${
       theme.background_color
-    } 30%);}[data-theme="theme${index + 1}"] .more-link {background-color: ${
+    } 100%);}[data-theme="theme${index + 1}"] .more-link {background-color: ${
       theme.text_color
     }; color: ${theme.background_color}}`
   })
