@@ -44,7 +44,11 @@ function MyApp({
       theme.background_color
     };color: ${theme.text_color};}[data-theme="theme${
       index + 1
-    }"] footer {background: ${theme.background_color};
+    }"] footer {background: ${
+      theme.background_color
+    }; background: -webkit-linear-gradient(0deg, ${
+      theme.background_color
+    } 65%, rgba(255,255,255,0) 100%);
       background: linear-gradient(0deg, ${
         theme.background_color
       } 65%, rgba(255,255,255,0) 100%);}[data-theme="theme${
