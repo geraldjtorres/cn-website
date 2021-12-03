@@ -39,3 +39,9 @@
     text-decoration: none;
   }
 }
+
+@media (max-width: 768px) {
+  .footer .textContainer {
+    padding: 10px 32px;
+  }
+}

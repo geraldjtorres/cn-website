@@ -55,9 +55,11 @@ function MyApp({
         theme.background_color
       } 40%);}[data-theme="theme${index + 1}"] .more-link {background-color: ${
       theme.text_color
-    }; color: ${theme.background_color}} @media (max-width: 768px) {
-      footer {
-        background: {theme.background_color}
+    }; color: ${theme.background_color}} 
+    
+    @media (max-width: 768px) {
+      [data-theme="theme${index + 1}"] footer {
+        background: none ${theme.background_color} !important
       }
     }`
   })
@@ -75,6 +77,7 @@ function MyApp({
   
   :root .more-link {background-color: ${randomTheme.background_color}}
     ${cssStyles.join('')}
+
   `
 
   // When mounted on client, now we can show the UI

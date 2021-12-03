@@ -44,7 +44,9 @@ a {
   text-decoration: none;
   border-radius: 100%;
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+
+  // transition-duration: 0s;
+  transition-delay: 0s;
 }
 @media (max-width: 768px) {
   p,

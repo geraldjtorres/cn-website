@@ -23,7 +23,8 @@
       width: 450px;
       min-width: 32%;
       overflow: scroll;
-      height: calc(100vh + 50px);
+      height: 100vh;
+      padding-bottom: 50px;
 
       p {
         margin-bottom: 16px;
