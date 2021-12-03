@@ -51,11 +51,15 @@ function MyApp({
       rgba(255, 255, 255, 0) 0%,
       ${theme.background_color} 40%
     );
-      background: linear-gradient(270deg,, ${theme.background_color} 0%, ${
-      theme.background_color
-    } 40%);}[data-theme="theme${index + 1}"] .more-link {background-color: ${
+      background: linear-gradient(270deg, $rgba(255, 255, 255, 0) 0%, ${
+        theme.background_color
+      } 40%);}[data-theme="theme${index + 1}"] .more-link {background-color: ${
       theme.text_color
-    }; color: ${theme.background_color}}`
+    }; color: ${theme.background_color}} @media (max-width: 768px) {
+      footer {
+        background: {theme.background_color}
+      }
+    }`
   })
 
   // Your themeing variables
