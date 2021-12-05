@@ -74,9 +74,15 @@ function MyApp({
   :root footer {background: linear-gradient(180deg, rgba(233, 231, 226, 0) 0%, ${
     randomTheme.background_color
   } 40%);}
+
+  @media (max-width: 768px) {
+    :root footer {
+      background: none ${randomTheme.background_color} !important
+    }
+  }
   
   :root .more-link {background-color: ${randomTheme.background_color}}
-    ${cssStyles.join('')}
+  ${cssStyles.join('')}
 
   `
 
