@@ -62,7 +62,8 @@
 
   .carouselContainer {
     height: 300px;
-    // border:
+    border: 1px solid blue;
+    margin-top: 10px;
   }
 
   .mobileInfo {
@@ -70,7 +71,7 @@
     max-width: 100%;
     margin: 0 auto;
     width: 90%;
-    margin-top: 48px;
+    margin-top: 15px;
     margin-bottom: 48px;
   }
 }
