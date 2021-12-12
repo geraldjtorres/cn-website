@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import Router from 'next/router'
 
+// Fix for scss modules bug when using Framer motion transitions
 const routeChange = () => {
   // Temporary fix to avoid flash of unstyled content
   // during route transitions. Keep an eye on this

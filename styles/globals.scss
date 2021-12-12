@@ -68,6 +68,8 @@ a {
   text-align: center;
   font-size: 18px;
   background: transparent;
+  text-align: center;
+  width: auto !important;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -84,15 +86,18 @@ a {
   align-items: center;
 }
 
-.swiper-slide span {
+.swiper-slide > span {
   display: block;
-  width: 100%;
+  // width: 100%;
+  width: auto;
   height: 100%;
   object-fit: cover;
 }
 
-.swiper-slide span img {
+.swiper-slide > img {
   display: block;
-  width: 100%;
+  // width: 100%;
+  width: auto;
   height: 100%;
+  object-fit: cover;
 }

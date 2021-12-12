@@ -18,13 +18,7 @@ export default function Carousel({ projects }) {
   return (
     <>
       <Swiper
-        breakpoints={{
-          768: {
-            // width: 768,
-            slidesPerView: 4
-          }
-        }}
-        slidesPerView={2}
+        slidesPerView='auto'
         freeMode={{
           enabled: true
           // minimumVelocity: 0.5,
@@ -33,7 +27,7 @@ export default function Carousel({ projects }) {
           // momentumRatio: 0.5
         }}
         spaceBetween={20}
-        loop={true}
+        // loop={true}
         autoplay={{
           delay: 1,
           disableOnInteraction: false,
@@ -42,16 +36,19 @@ export default function Carousel({ projects }) {
         }}
         speed={20000}
         pagination={false}
+        loop={true}
         className='mySwiper'
       >
         {projects.map(project => (
-          <SwiperSlide className='box' key={project.id}>
-            <Image
+          <SwiperSlide key={project.id}>
+            <img src={project.image.url} alt={project.image_description} />
+
+            {/* <Image
               src={project.image.url}
               layout='fill'
-              objectFit='contain'
+              objectFit='cover'
               alt={project.image_description}
-            />
+            /> */}
           </SwiperSlide>
         ))}
       </Swiper>
