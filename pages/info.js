@@ -8,13 +8,13 @@ import { useState } from 'react'
 import { slideUp } from '../animations'
 import { motion } from 'framer-motion'
 
-export default function InfoPage({ infopage }) {
+export default function InfoPage({ infopage, metaData }) {
   const [heroImage, setHeroImage] = useState({
     backgroundImage: `url(${infopage.profile_picture.formats.large.url})`
   })
 
   return (
-    <Layout footerLink='work'>
+    <Layout footerLink='work' metaData={metaData}>
       <div className={styles.container}>
         <div className={styles.content}>
           <Link href='/'>
@@ -91,11 +91,22 @@ export default function InfoPage({ infopage }) {
 }
 
 export async function getStaticProps() {
+  let metaData = {}
   const infopageRes = await fetch(`${API_URL}/infopage`)
   const infopage = await infopageRes.json()
+  const metaRes = await fetch(`${API_URL}/metadata`)
+  const meta = await metaRes.json()
+
+  metaData = {
+    metaTitle: meta.title,
+    metaUrl: meta.url,
+    metaDescription: meta.description,
+    metaFavicon: meta.favicon.url,
+    metaSocialCard: meta.social_media_card[0].formats.small.url
+  }
 
   return {
-    props: { infopage }, // will be passed to the page component as props
+    props: { infopage, metaData }, // will be passed to the page component as props
     revalidate: 1
   }
 }
