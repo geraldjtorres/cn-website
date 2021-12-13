@@ -13,14 +13,14 @@ export default function Layout({
   return (
     <div>
       <Head>
-        <link rel='icon' href={metaData.metaFavicon} />
+        <meta property='og:description' content={metaData.metaDescription} />
+        <meta property='og:image' content={metaData.metaSocialCard} />
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
 
         <meta property='og:title' content={metaData.metaTitle} />
         <meta property='og:url' content={metaData.metaUrl} />
-        <meta property='og:description' content={metaData.metaDescription} />
-        <meta property='og:image' content={metaData.metaSocialCard} />
+        <link rel='icon' href={metaData.metaFavicon} />
         <title>{title}</title>
       </Head>
 
