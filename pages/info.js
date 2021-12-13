@@ -102,7 +102,7 @@ export async function getStaticProps() {
     metaUrl: meta.url,
     metaDescription: meta.description,
     metaFavicon: meta.favicon.url,
-    metaSocialCard: meta.social_media_card[0].formats.small.url
+    metaSocialCard: meta.social_media_card[0].formats.thumbnail.url
   }
 
   return {
