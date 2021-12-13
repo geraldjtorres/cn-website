@@ -14,7 +14,6 @@ export default function Layout({
     <div>
       <Head>
         <link rel='icon' href={metaData.metaFavicon} />
-        <title>{title}</title>
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
 
@@ -22,6 +21,7 @@ export default function Layout({
         <meta property='og:url' content={metaData.metaUrl} />
         <meta property='og:description' content={metaData.metaDescription} />
         <meta property='og:image' content={metaData.metaSocialCard} />
+        <title>{title}</title>
       </Head>
 
       {children}
