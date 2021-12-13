@@ -4,6 +4,8 @@ import { ThemeProvider, useTheme } from 'next-themes'
 import { API_URL } from '@/config/index'
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { DefaultSeo } from 'next-seo'
+// import SEO from '../next-seo.config';
 
 import Router from 'next/router'
 
@@ -102,6 +104,22 @@ function MyApp({
       <GlobalStyle />
       <AnimatePresence exitBeforeEnter>
         <motion.div key={router.route}>
+          <DefaultSeo
+            openGraph={{
+              type: 'website',
+              url: 'https://craig-norwood-v2.vercel.app/',
+              title: 'Craig Norwood',
+              description: 'Craig Norwood Designer',
+              images: [
+                {
+                  url: 'https://res.cloudinary.com/gjtorres-dev/image/upload/v1639313961/cn-website/thumbnail_cn_website_social_card_d41e141ecf.jpg',
+                  width: 800,
+                  height: 600,
+                  alt: 'Craig Norwood'
+                }
+              ]
+            }}
+          />
           <ThemeProvider defaultTheme={theme}>
             <Component {...pageProps} />
           </ThemeProvider>

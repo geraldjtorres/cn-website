@@ -6,9 +6,9 @@ import Link from 'next/link'
 import { slideUp } from '../animations'
 import { motion } from 'framer-motion'
 
-export default function Terms({ termspage, metaData }) {
+export default function Terms({ termspage }) {
   return (
-    <Layout footerLink='info' metaData={metaData}>
+    <Layout footerLink='info'>
       <div className={styles.container}>
         <div className={styles.content}>
           <Link href='/'>
@@ -33,22 +33,11 @@ export default function Terms({ termspage, metaData }) {
 }
 
 export async function getStaticProps() {
-  let metaData = {}
   const termspageRes = await fetch(`${API_URL}/termspage`)
   const termspage = await termspageRes.json()
-  const metaRes = await fetch(`${API_URL}/metadata`)
-  const meta = await metaRes.json()
-
-  metaData = {
-    metaTitle: meta.title,
-    metaUrl: meta.url,
-    metaDescription: meta.description,
-    metaFavicon: meta.favicon.url,
-    metaSocialCard: meta.social_media_card[0].formats.thumbnail.url
-  }
 
   return {
-    props: { termspage, metaData }, // will be passed to the page component as props
+    props: { termspage }, // will be passed to the page component as props
     revalidate: 1
   }
 }
