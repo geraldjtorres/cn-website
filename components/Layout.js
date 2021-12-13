@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Footer from '@/components/Footer'
+import { useState } from 'react'
 export default function Layout({
   title,
   keywords,
@@ -10,11 +11,13 @@ export default function Layout({
   colorScheme,
   metaData
 }) {
+  const [metaImage, setMetaImage] = useState(metaData.metaSocialCard)
+
   return (
     <div>
       <Head>
         <meta property='og:description' content={metaData.metaDescription} />
-        <meta property='og:image' content={metaData.metaSocialCard} />
+        <meta property='og:image' content={metaImage} />
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
 
