@@ -100,8 +100,6 @@ function MyApp({
 
   // if (!mounted) return null
 
-  console.log(metaData)
-
   return (
     <>
       <GlobalStyle />
@@ -154,7 +152,7 @@ MyApp.getInitialProps = async () => {
     metaUrl: meta.url,
     metaDescription: meta.description,
     metaFavicon: meta.favicon.url,
-    metaSocialCard: meta.social_media_card[0].formats.thumbnail.url
+    metaSocialCard: meta.social_media_card[0].formats.small.url
   }
 
   return {
