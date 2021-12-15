@@ -14,18 +14,10 @@ export default function Layout({
   return (
     <div>
       <Head>
-        {/* <meta property='og:description' content={metaData.metaDescription} />
-        <meta
-          property='og:image'
-          content='https://res.cloudinary.com/gjtorres-dev/image/upload/v1639313961/cn-website/thumbnail_cn_website_social_card_d41e141ecf.jpg'
-        />
-        <meta property='og:title' content={metaData.metaTitle} />
-        <meta property='og:url' content={metaData.metaUrl} />
-        <link rel='icon' href={metaData.metaFavicon} /> */}
-        <meta name='description' content={description} />
-        <meta name='keywords' content={keywords} />
-
         <title>{title}</title>
+
+        {/* <meta name='description' content={description} />
+        <meta name='keywords' content={keywords} /> */}
       </Head>
 
       {children}

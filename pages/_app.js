@@ -33,7 +33,8 @@ function MyApp({
   Component,
   pageProps,
   pageProps: {
-    colorScheme: { themes }
+    colorScheme: { themes },
+    metaData
   }
 }) {
   const [mounted, setMounted] = useState(false)
@@ -91,13 +92,15 @@ function MyApp({
 
   // When mounted on client, now we can show the UI
   useEffect(() => {
-    setMounted(true)
+    // setMounted(true)
     // Add themes to local storage
     localStorage.setItem('themes', JSON.stringify(themes))
     router.push(router.pathname)
   }, [])
 
-  if (!mounted) return null
+  // if (!mounted) return null
+
+  console.log(metaData)
 
   return (
     <>
@@ -105,14 +108,22 @@ function MyApp({
       <AnimatePresence exitBeforeEnter>
         <motion.div key={router.route}>
           <DefaultSeo
+            title={metaData.metaTitle}
+            description={metaData.metaDescription}
+            additionalLinkTags={[
+              {
+                rel: 'icon',
+                href: metaData.metaFavicon
+              }
+            ]}
             openGraph={{
               type: 'website',
-              url: 'https://craig-norwood-v2.vercel.app/',
-              title: 'Craig Norwood',
-              description: 'Craig Norwood Designer',
+              url: metaData.metaUrl,
+              title: metaData.metaTitle,
+              description: metaData.metaDescription,
               images: [
                 {
-                  url: 'https://res.cloudinary.com/gjtorres-dev/image/upload/v1639313961/cn-website/thumbnail_cn_website_social_card_d41e141ecf.jpg',
+                  url: metaData.metaSocialCard,
                   width: 800,
                   height: 600,
                   alt: 'Craig Norwood'
@@ -135,7 +146,18 @@ MyApp.getInitialProps = async () => {
   const colorsRes = await fetch(`${API_URL}/colorscheme`)
   const colorScheme = await colorsRes.json()
 
+  const metaRes = await fetch(`${API_URL}/metadata`)
+  const meta = await metaRes.json()
+
+  const metaData = {
+    metaTitle: meta.title,
+    metaUrl: meta.url,
+    metaDescription: meta.description,
+    metaFavicon: meta.favicon.url,
+    metaSocialCard: meta.social_media_card[0].formats.thumbnail.url
+  }
+
   return {
-    pageProps: { colorScheme } // will be passed to the page component as props
+    pageProps: { colorScheme, metaData } // will be passed to the page component as props
   }
 }
