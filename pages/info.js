@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 
 export default function InfoPage({ infopage }) {
   const [heroImage, setHeroImage] = useState({
-    backgroundImage: `url(${infopage.profile_picture.formats.large.url})`
+    backgroundImage: `url(${infopage.profile_picture.formats.medium.url})`
   })
 
   return (
@@ -33,14 +33,14 @@ export default function InfoPage({ infopage }) {
             onMouseEnter={() => {
               setHeroImage({
                 backgroundImage: `url(
-                  ${infopage.studio_picture.formats.large.url}
+                  ${infopage.studio_picture.formats.medium.url}
                 )`
               })
             }}
             onMouseLeave={() => {
               setHeroImage({
                 backgroundImage: `url(
-                  ${infopage.profile_picture.formats.large.url}
+                  ${infopage.profile_picture.formats.medium.url}
                 )`
               })
             }}
@@ -67,10 +67,9 @@ export default function InfoPage({ infopage }) {
             <ul>
               {infopage.links.map(link => (
                 <li key={link.id}>
+                  <FiCornerDownRight />
                   <Link href={link.href}>
-                    <a target='_blank'>
-                      <FiCornerDownRight /> {link.label}
-                    </a>
+                    <a target='_blank'>{link.label}</a>
                   </Link>
                 </li>
               ))}

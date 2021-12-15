@@ -14,9 +14,42 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+@keyframes borderAnimation {
+  from {
+    background-position: 0 0, -11.5px 0, 100% -11.5px, 0 100%;
+  }
+  to {
+    background-position: 0 -11.5px, 0 0, 100% 0, -11.5px 100%;
+  }
+}
+
 a {
   color: inherit;
   text-underline-offset: 3px;
+
+  &:hover {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 3px;
+
+    background-size: 0px calc(100% + 11.5px), calc(100% + 11.5px) 0px,
+      0px calc(100% + 11.5px), calc(100% + 11.5px) 3px;
+
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    animation: borderAnimation 0.3s infinite linear;
+
+    // &:after {
+    //   content: '';
+    //   width: 100%;
+    //   position: absolute;
+    //   bottom: -2px;
+    //   left: 0;
+    //   height: 1px;
+    //   border: 1px solid red;
+    // }
+  }
 }
 
 * {

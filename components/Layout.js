@@ -9,8 +9,6 @@ export default function Layout({
   footerLink,
   metaData
 }) {
-  // const [metaImage, setMetaImage] = useState(metaData.metaSocialCard)
-
   return (
     <div>
       <Head>

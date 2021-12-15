@@ -46,9 +46,44 @@ function MyApp({
   const cssStyles = themes.map((theme, index) => {
     return `[data-theme="theme${index + 1}"]{background-color: ${
       theme.background_color
-    };color: ${theme.text_color};}[data-theme="theme${
-      index + 1
-    }"] footer {background: ${
+    };color: ${theme.text_color};}
+    
+    ${theme.text_color};}[data-theme="theme${index + 1}"] a:hover {
+      background-image: repeating-linear-gradient(
+        -17deg,
+        ${theme.text_color},
+        ${theme.text_color} 5px,
+        transparent 5px,
+        transparent 11px,
+        ${theme.text_color} 11px
+      ),
+      repeating-linear-gradient(
+        73deg,
+        ${theme.text_color},
+        ${theme.text_color} 5px,
+        transparent 5px,
+        transparent 11px,
+        ${theme.text_color} 11px
+      ),
+      repeating-linear-gradient(
+        163deg,
+        ${theme.text_color},
+        ${theme.text_color} 5px,
+        transparent 5px,
+        transparent 11px,
+        ${theme.text_color} 11px
+      ),
+      repeating-linear-gradient(
+        253deg,
+        ${theme.text_color},
+        ${theme.text_color} 5px,
+        transparent 5px,
+        transparent 11px,
+        ${theme.text_color} 11px
+      );
+    }
+    
+    [data-theme="theme${index + 1}"] footer {background: ${
       theme.background_color
     };   background: -webkit-linear-gradient(
       270deg,

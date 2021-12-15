@@ -7,9 +7,9 @@ import { API_URL } from '@/config/index'
 import { slideUp } from '../animations'
 import { motion } from 'framer-motion'
 
-export default function Home({ projects, homepage, metaData }) {
+export default function Home({ projects, homepage }) {
   return (
-    <Layout footerLink='info' metaData={metaData}>
+    <Layout footerLink='info'>
       <div className={styles.container}>
         <div className={styles.content}>
           <Link href='/'>
@@ -51,25 +51,13 @@ export default function Home({ projects, homepage, metaData }) {
 }
 
 export async function getStaticProps(pageProps) {
-  let metaData = {}
-
   const projectsRes = await fetch(`${API_URL}/projects`)
   const homePageRes = await fetch(`${API_URL}/homepage`)
   const projects = await projectsRes.json()
   const homepage = await homePageRes.json()
-  const metaRes = await fetch(`${API_URL}/metadata`)
-  const meta = await metaRes.json()
-
-  metaData = {
-    metaTitle: meta.title,
-    metaUrl: meta.url,
-    metaDescription: meta.description,
-    metaFavicon: meta.favicon.url,
-    metaSocialCard: meta.social_media_card[0].formats.thumbnail.url
-  }
 
   return {
-    props: { projects, homepage, metaData }, // will be passed to the page component as props
+    props: { projects, homepage }, // will be passed to the page component as props
     revalidate: 1
   }
 }
