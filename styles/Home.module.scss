@@ -44,6 +44,12 @@
   display: none;
 }
 
+@media (max-width: 1024px) {
+  .carouselContainer {
+    height: 330px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     .content {
@@ -62,7 +68,7 @@
   }
 
   .carouselContainer {
-    height: 237px;
+    height: 230px;
     margin-top: 0;
   }
 
