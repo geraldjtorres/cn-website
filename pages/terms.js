@@ -3,7 +3,7 @@ import Layout from '@/components/Layout'
 import { API_URL } from '@/config/index'
 import ReactMarkdown from 'react-markdown'
 import Link from 'next/link'
-import { slideUp } from '../animations'
+import {  fadeInOut } from '../animations'
 import { motion } from 'framer-motion'
 
 export default function Terms({ termspage }) {
@@ -16,13 +16,13 @@ export default function Terms({ termspage }) {
           </Link>
           <motion.div
             className={styles.info}
-            initial={slideUp.initial}
+            initial={fadeInOut.initial}
             transition={{
               ease: 'easeInOut',
               duration: '0.5'
             }}
-            exit={slideUp.exit}
-            animate={slideUp.animate}
+            exit={fadeInOut.exit}
+            animate={fadeInOut.animate}
           >
             <ReactMarkdown linkTarget='_blank'>{termspage.terms}</ReactMarkdown>
           </motion.div>

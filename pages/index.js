@@ -4,7 +4,7 @@ import Carousel from '@/components/Carousel'
 import ReactMarkdown from 'react-markdown'
 import Link from 'next/link'
 import { API_URL } from '@/config/index'
-import { slideUp } from '../animations'
+import { fadeInOut } from '../animations'
 import { motion } from 'framer-motion'
 
 export default function Home({ projects, homepage }) {
@@ -17,13 +17,13 @@ export default function Home({ projects, homepage }) {
           </Link>
           <motion.div
             className={styles.info}
-            initial={slideUp.initial}
+            initial={fadeInOut.initial}
             transition={{
               ease: 'easeInOut',
               duration: '0.5'
             }}
-            exit={slideUp.exit}
-            animate={slideUp.animate}
+            exit={fadeInOut.exit}
+            animate={fadeInOut.animate}
           >
             <ReactMarkdown>{homepage.text}</ReactMarkdown>
           </motion.div>
@@ -31,14 +31,14 @@ export default function Home({ projects, homepage }) {
       </div>
       <motion.div
         className={styles.carouselContainer}
-        initial={slideUp.initial}
+        initial={fadeInOut.initial}
         transition={{
           ease: 'easeInOut',
           duration: '0.5',
           delay: 0.3
         }}
-        exit={slideUp.exit}
-        animate={slideUp.animate}
+        exit={fadeInOut.exit}
+        animate={fadeInOut.animate}
       >
         <Carousel projects={projects} />
       </motion.div>

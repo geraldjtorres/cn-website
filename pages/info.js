@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { API_URL } from '@/config/index'
 import ReactMarkdown from 'react-markdown'
 import { useState } from 'react'
-import { slideUp } from '../animations'
+import { fadeInOut } from '../animations'
 import { motion } from 'framer-motion'
 
 export default function InfoPage({ infopage }) {
@@ -22,13 +22,13 @@ export default function InfoPage({ infopage }) {
           </Link>
           <motion.div
             className={styles.picture}
-            initial={slideUp.initial}
+            initial={fadeInOut.initial}
             transition={{
               ease: 'easeInOut',
               duration: '0.5'
             }}
-            exit={slideUp.exit}
-            animate={slideUp.animate}
+            exit={fadeInOut.exit}
+            animate={fadeInOut.animate}
             style={heroImage}
             onMouseEnter={() => {
               setHeroImage({
@@ -45,20 +45,20 @@ export default function InfoPage({ infopage }) {
               })
             }}
           >
-            <a target='_blank' href={infopage.more_link} className='more-link'>
+            <a target='_blank' href={infopage.more_link} className='more-link' rel="noreferrer">
               More
             </a>
           </motion.div>
           <motion.div
             className={styles.info}
-            initial={slideUp.initial}
+            initial={fadeInOut.initial}
             transition={{
               ease: 'easeInOut',
               duration: '0.5',
               delay: 0.3
             }}
-            exit={slideUp.exit}
-            animate={slideUp.animate}
+            exit={fadeInOut.exit}
+            animate={fadeInOut.animate}
           >
             <ReactMarkdown linkTarget='_blank'>
               {infopage.description}

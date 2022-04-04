@@ -13,6 +13,7 @@ export default function Layout({
     <div>
       <Head>
         <title>{title}</title>
+        <script defer data-domain="craignorwood.co" src="https://plausible.io/js/plausible.js"></script>
 
         {/* <meta name='description' content={description} />
         <meta name='keywords' content={keywords} /> */}
