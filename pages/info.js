@@ -80,7 +80,7 @@ export default function InfoPage({ infopage }) {
               </ReactMarkdown>
             </div>
             <p>
-              © 2021 <Link href='/terms'>Terms</Link>
+              © 2022 <Link href='/terms'>Terms</Link>
             </p>
           </motion.div>
         </div>

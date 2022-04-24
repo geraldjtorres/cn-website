@@ -29,11 +29,10 @@
     p:first-of-type {
       margin-right: 40px;
       cursor: pointer;
-      text-decoration: underline;
-      // text-underline-offset: 3px;
-      // &:hover {
-      //   text-decoration: none;
-      // }
+
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 
@@ -41,8 +40,9 @@
     text-transform: capitalize;
   }
   a {
+    text-decoration: none;
     &:hover {
-      text-decoration: none;
+      opacity: 0.5;
     }
   }
 }
